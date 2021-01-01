@@ -53,8 +53,6 @@ namespace ASimpleBlog.Plumbing
             {
                 using (var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>())
                 {
-                    context.Database.Migrate();
-
                     if (context.Posts.Count() == 0)
                     {
                         context.Posts.Add(new Post
